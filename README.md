@@ -37,25 +37,36 @@ CODE AND OUTPUT :
 
 CODE A:
 ```
-//Printing array 
-#include <iostream>
+// Printing of array by two different meathods
+
+# include <iostream>
+# include <array>
 using namespace std;
 
-int main() {
-    int array1[5] = {10, 20, 30, 40, 50};
-    int array2[] = {60, 70, 80, 90, 100};
-
-    cout << "\nModern method: \n";
-
-    for (int i = 0; i < 5; i++) {
-        cout << "array1[" << i << "] = " << array1[i] << "\n";
+int main(){
+    
+    int array1[] = {10,20,30,40,50};
+    int array2[5];
+    array2[0] = 60 ;
+    array2[1] = 70 ;
+    array2[2] = 80 ;
+    array2[3] = 90 ;
+    
+    cout << "This is the 1st array " << endl;
+    
+    // printing of first array
+    for(int i = 0;i < 4 ; i++){
+        cout << "The value is " << i << endl;
     }
-
-    for (int i = 0; i < 5; i++) {
-        cout << "array2[" << i << "] = " << array2[i] << "\n";
-    }
-
+    cout << "This is the 2nd array " << endl;
+    // Printing of second array
+    cout << array2[0]  << endl;
+    cout << array2[1]  << endl ;
+    cout << array2[2]  << endl ;
+    cout << array2[3]  << endl ;
+    
     return 0;
+    
 }
 ```
 OUTPUT:
@@ -64,27 +75,23 @@ OUTPUT:
 
 CODE B:
 ```
+// Taking input from user in single dimentional array
 
-#include <iostream>
-#define SIZE 5
+# include <iostream>
 using namespace std;
 
-int main() {
-    int array1[SIZE];
+int main(){
 
-    //take input from user
-    cout << "Enter " << SIZE << " elements of array: ";
-    for (int index = 0; index < SIZE; index++) {
-        cin >> array1[index];
-    }
-  cout << endl;
-
-    // display entered array ekements
-    for (int j : array1) {
-        cout << j << "  ";
+    int array[5]; // declaration of array
+    for (int i = 0; i < 5; i++){
+        cout << " Enter value " << i << endl;
+        cin >> array[i];
     }
 
-   return 0;
+    cout << "Your array is " << endl;
+    for(int i = 0; i < 5; i++){ // for printing of array
+        cout<< array[i] << endl;
+    }
 }
 ```
 OUTPUT:
@@ -97,33 +104,42 @@ CODE C:
 using namespace std;
 
 int main() {
-    int n, i, j=0, k, l, temp;
-    cout<<"Enter size of an array: ";
-    cin>>n;
-    int arr1[n], arr2[n];
-     //create array
-    for(i=0;i<5;i++) {
-        cout<<"Enter element-"<<i+1<<": ";
-        cin>>arr1[i];
+    int n, i, j = 0, k, l, temp;
+    cout << "Enter size of an array: ";
+    cin >> n; // n stores the size of the array
+
+    int arr1[n], arr2[n]; // initialization of array
+
+    // creation of array 1 (array 2 is just the reverse of array 1)
+    for(i = 0; i < n; i++) {
+        cout << "Enter element-" << i + 1 << ": ";
+        cin >> arr1[i];
     }
-    //display input array
-    cout<<"\nArray given by user: ";
-    for(l=0;l<5;l++) {
-        cout<<arr1[l];
+
+    // display input array
+    cout << "\nArray given by user: ";
+    for(l = 0; l < n; l++) {
+        cout << arr1[l] << " ";
     }
-    cout<<endl;
-    //reverse array
-    for(k=4;k>=0;k--) {
-        temp = arr1[k];
-        arr2[j] = temp;
+    cout << endl;
+
+    // reverse array
+    for(k = n - 1; k >= 0; k--) {
+        arr2[j] = arr1[k];
         j++;
     }
-    //display reversed array
-    cout<<"Reversed array: ";
-    for(l=0;l<5;l++) {
-        cout<<arr2[l];
+
+    // display reversed array
+    cout << "Reversed array: ";
+    for(l = 0; l < n; l++) {
+        cout << arr2[l] << " ";
     }
+    cout << endl;
+
+    return 0; // Return 0 to indicate successful completion
 }
+
+
 ```
 OUTPUT:
 ![ar3](https://github.com/user-attachments/assets/6f8c5aaa-5aff-4fed-8533-959a78ab7326)
