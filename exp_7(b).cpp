@@ -1,21 +1,18 @@
-#include <iostream>
-#define SIZE 5
+// Taking input from user in single dimentional array
+
+# include <iostream>
 using namespace std;
 
-int main() {
-    int array1[SIZE];
+int main(){
 
-    //take input from user
-    cout << "Enter " << SIZE << " elements of array: ";
-    for (int index = 0; index < SIZE; index++) {
-        cin >> array1[index];
-    }
-  cout << endl;
-
-    // display entered array ekements
-    for (int j : array1) {
-        cout << j << "  ";
+    int array[5]; // declaration of array
+    for (int i = 0; i < 5; i++){
+        cout << " Enter value " << i << endl;
+        cin >> array[i];
     }
 
-   return 0;
+    cout << "Your array is " << endl;
+    for(int i = 0; i < 5; i++){ // for printing of array
+        cout<< array[i] << endl;
+    }
 }
